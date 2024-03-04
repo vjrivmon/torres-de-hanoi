@@ -10,7 +10,7 @@ namespace Torres_de_Hanoi
     {
         public void mover_disco(Pila a, Pila b)
         {
-            if (a.IsEmpty() || (!b.IsEmpty() && a.pop() > b.pop()))
+            if (!a.IsEmpty() || (!b.IsEmpty() && a.Top >= 0 && b.Top >= 0 && a.Elementos[a.Top].Valor > b.Elementos[b.Top].Valor))
             {
                 a.push(b.pop());
             }
@@ -23,11 +23,8 @@ namespace Torres_de_Hanoi
         public void mostrar(Pila a, Pila b, Pila c)
         {
             Console.WriteLine("Pila A: ");
-            a.mostrar();
             Console.WriteLine("Pila B: ");
-            b.mostrar();
             Console.WriteLine("Pila C: ");
-            c.mostrar();
         }
 
         public int iterativo(int n, Pila ini, Pila fin, Pila aux)
@@ -35,19 +32,19 @@ namespace Torres_de_Hanoi
             int m = 0;
             if (n % 2 != 0)
             {
-                while (!fin.esCompleta())
+                while (fin.IsEmpty())
                 {
                     mover_disco(ini, fin);
                     m++;
                     mostrar(ini, fin, aux);
 
-                    if (fin.esCompleta()) break;
+                    if (!fin.IsEmpty()) break;
 
                     mover_disco(ini, aux);
                     m++;
                     mostrar(ini, fin, aux);
 
-                    if (fin.esCompleta()) break;
+                    if (!fin.IsEmpty()) break;
 
                     mover_disco(aux, fin);
                     m++;
@@ -56,19 +53,19 @@ namespace Torres_de_Hanoi
             }
             else
             {
-                while (!fin.esCompleta())
+                while (fin.IsEmpty())
                 {
                     mover_disco(ini, aux);
                     m++;
                     mostrar(ini, fin, aux);
 
-                    if (fin.esCompleta()) break;
+                    if (!fin.IsEmpty()) break;
 
                     mover_disco(ini, fin);
                     m++;
                     mostrar(ini, fin, aux);
 
-                    if (fin.esCompleta()) break;
+                    if (!fin.IsEmpty()) break;
 
                     mover_disco(aux, fin);
                     m++;
