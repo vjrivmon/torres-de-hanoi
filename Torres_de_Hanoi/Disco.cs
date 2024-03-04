@@ -8,22 +8,14 @@ namespace Torres_de_Hanoi
 {
     class Disco
     {
-        /*TODO: 
-        Decidir tipo de Valor
+        //Tipo de valor -> int
         public int Valor { get; set; }
-        public String Valor { get; set; }
-        */
-        public int Valor { get; set; }
+
+        //Constructor
         public Disco(int valor)
         {
             Valor = valor;
         }
-    }
-    class Program
-    {
-        static void Main(string[] args)
-
-
-        //Pvchipu <3
+        
     }
 }
