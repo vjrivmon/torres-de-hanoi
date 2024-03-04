@@ -7,3 +7,8 @@ C:\Users\Visi\OneDrive\Escritorio\Universidad\Curso 23-24\Algoritmica\Practicas\
 C:\Users\Visi\OneDrive\Escritorio\Universidad\Curso 23-24\Algoritmica\Practicas\Prac1\torres-de-hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.CoreCompileInputs.cache
 C:\Users\Visi\OneDrive\Escritorio\Universidad\Curso 23-24\Algoritmica\Practicas\Prac1\torres-de-hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.exe
 C:\Users\Visi\OneDrive\Escritorio\Universidad\Curso 23-24\Algoritmica\Practicas\Prac1\torres-de-hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.pdb
+C:\Users\IRENE\Desktop\Universidad\SEGUNDO\2o\Practicas algorítmicas\Prac1\torres-de-hanoi\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.exe.config
+C:\Users\IRENE\Desktop\Universidad\SEGUNDO\2o\Practicas algorítmicas\Prac1\torres-de-hanoi\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.exe
+C:\Users\IRENE\Desktop\Universidad\SEGUNDO\2o\Practicas algorítmicas\Prac1\torres-de-hanoi\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.pdb
+C:\Users\IRENE\Desktop\Universidad\SEGUNDO\2o\Practicas algorítmicas\Prac1\torres-de-hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.exe
+C:\Users\IRENE\Desktop\Universidad\SEGUNDO\2o\Practicas algorítmicas\Prac1\torres-de-hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.pdb

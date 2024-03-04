@@ -25,7 +25,9 @@ namespace Torres_de_Hanoi
 
             Hanoi h = new Hanoi();
             h.iterativo(3, ini, fin, aux);
-            Console.ReadKey();
+            Console.WriteLine(ini);
+            Console.WriteLine(aux);
+            Console.WriteLine(fin);
 
         }
     }
