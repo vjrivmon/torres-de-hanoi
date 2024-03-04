@@ -10,7 +10,7 @@ namespace Torres_de_Hanoi
     {
         public void mover_disco(Pila a, Pila b)
         {
-            if (a.esVacia() || (!b.esVacia() && a.verCima() > b.verCima()))
+            if (a.IsEmpty() || (!b.IsEmpty() && a.pop() > b.pop()))
             {
                 a.push(b.pop());
             }
@@ -61,7 +61,7 @@ namespace Torres_de_Hanoi
                     mover_disco(ini, aux);
                     m++;
                     mostrar(ini, fin, aux);
-code .gitmodules
+
                     if (fin.esCompleta()) break;
 
                     mover_disco(ini, fin);

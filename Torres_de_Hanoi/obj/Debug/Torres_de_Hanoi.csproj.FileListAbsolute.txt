@@ -1,0 +1,2 @@
+C:\Users\IRENE\Desktop\Universidad\SEGUNDO\2o\Practicas algorítmicas\Prac1\torres-de-hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.AssemblyReference.cache
+C:\Users\IRENE\Desktop\Universidad\SEGUNDO\2o\Practicas algorítmicas\Prac1\torres-de-hanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.CoreCompileInputs.cache
