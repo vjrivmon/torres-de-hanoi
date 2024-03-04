@@ -8,16 +8,74 @@ namespace Torres_de_Hanoi
 {
     class Hanoi
     {
-        /*TODO: Implementar métodos*/
         public void mover_disco(Pila a, Pila b)
         {
+            if (a.esVacia() || (!b.esVacia() && a.verCima() > b.verCima()))
+            {
+                a.push(b.pop());
+            }
+            else
+            {
+                b.push(a.pop());
+            }
+        }
 
+        public void mostrar(Pila a, Pila b, Pila c)
+        {
+            Console.WriteLine("Pila A: ");
+            a.mostrar();
+            Console.WriteLine("Pila B: ");
+            b.mostrar();
+            Console.WriteLine("Pila C: ");
+            c.mostrar();
         }
 
         public int iterativo(int n, Pila ini, Pila fin, Pila aux)
         {
-            return 0;
-        }
+            int m = 0;
+            if (n % 2 != 0)
+            {
+                while (!fin.esCompleta())
+                {
+                    mover_disco(ini, fin);
+                    m++;
+                    mostrar(ini, fin, aux);
 
+                    if (fin.esCompleta()) break;
+
+                    mover_disco(ini, aux);
+                    m++;
+                    mostrar(ini, fin, aux);
+
+                    if (fin.esCompleta()) break;
+
+                    mover_disco(aux, fin);
+                    m++;
+                    mostrar(ini, fin, aux);
+                }
+            }
+            else
+            {
+                while (!fin.esCompleta())
+                {
+                    mover_disco(ini, aux);
+                    m++;
+                    mostrar(ini, fin, aux);
+code .gitmodules
+                    if (fin.esCompleta()) break;
+
+                    mover_disco(ini, fin);
+                    m++;
+                    mostrar(ini, fin, aux);
+
+                    if (fin.esCompleta()) break;
+
+                    mover_disco(aux, fin);
+                    m++;
+                    mostrar(ini, fin, aux);
+                }
+            }
+            return m;
+        }
     }
 }

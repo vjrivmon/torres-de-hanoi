@@ -13,6 +13,17 @@ namespace Torres_de_Hanoi
         public int Valor { get; set; }
         public String Valor { get; set; }
         */
+        public int Valor { get; set; }
+        public Disco(int valor)
+        {
+            Valor = valor;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
 
+
+        //Pvchipu <3
     }
 }
