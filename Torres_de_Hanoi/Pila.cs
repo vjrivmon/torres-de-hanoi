@@ -42,15 +42,23 @@ namespace Torres_de_Hanoi
             return null;
         }
 
-
         public bool IsEmpty()
         {
-            if (Size == 0)
+            if (Top == -1)
             {
                 return true;
             }
             return false;
         }
 
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = Top; i >= 0; i--)
+            {
+                sb.Append(Elementos[i].Valor + " ");
+            }
+            return sb.ToString();
+        }
     }
 }

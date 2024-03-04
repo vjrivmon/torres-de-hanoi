@@ -10,21 +10,21 @@ namespace Torres_de_Hanoi
     {
         public void mover_disco(Pila a, Pila b)
         {
-            if (!a.IsEmpty() || (!b.IsEmpty() && a.Top >= 0 && b.Top >= 0 && a.Elementos[a.Top].Valor > b.Elementos[b.Top].Valor))
+            if (b.IsEmpty() || (!a.IsEmpty() && a.Elementos[a.Top].Valor < b.Elementos[b.Top].Valor))
             {
-                a.push(b.pop());
+                b.push(a.pop());
             }
             else
             {
-                b.push(a.pop());
+                a.push(b.pop());
             }
         }
 
         public void mostrar(Pila a, Pila b, Pila c)
         {
-            Console.WriteLine("Pila A: ");
-            Console.WriteLine("Pila B: ");
-            Console.WriteLine("Pila C: ");
+            Console.WriteLine("Pila A: " + a);
+            Console.WriteLine("Pila B: " + b);
+            Console.WriteLine("Pila C: " + c);
         }
 
         public int iterativo(int n, Pila ini, Pila fin, Pila aux)
@@ -32,44 +32,44 @@ namespace Torres_de_Hanoi
             int m = 0;
             if (n % 2 != 0)
             {
-                while (fin.IsEmpty())
+                while (fin.Size != n)
                 {
                     mover_disco(ini, fin);
                     m++;
-                    mostrar(ini, fin, aux);
+                    mostrar(ini, aux, fin);
 
-                    if (!fin.IsEmpty()) break;
+                    if (fin.Size == n) break;
 
                     mover_disco(ini, aux);
                     m++;
-                    mostrar(ini, fin, aux);
+                    mostrar(ini, aux, fin);
 
-                    if (!fin.IsEmpty()) break;
+                    if (fin.Size == n) break;
 
                     mover_disco(aux, fin);
                     m++;
-                    mostrar(ini, fin, aux);
+                    mostrar(ini, aux, fin);
                 }
             }
             else
             {
-                while (fin.IsEmpty())
+                while (fin.Size != n)
                 {
                     mover_disco(ini, aux);
                     m++;
-                    mostrar(ini, fin, aux);
+                    mostrar(ini, aux, fin);
 
-                    if (!fin.IsEmpty()) break;
+                    if (fin.Size == n) break;
 
                     mover_disco(ini, fin);
                     m++;
-                    mostrar(ini, fin, aux);
+                    mostrar(ini, aux, fin);
 
-                    if (!fin.IsEmpty()) break;
+                    if (fin.Size == n) break;
 
                     mover_disco(aux, fin);
                     m++;
-                    mostrar(ini, fin, aux);
+                    mostrar(ini, aux, fin);
                 }
             }
             return m;
