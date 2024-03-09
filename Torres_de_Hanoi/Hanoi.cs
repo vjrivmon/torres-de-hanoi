@@ -30,42 +30,43 @@ namespace Torres_de_Hanoi
         public int iterativo(int n, Pila ini, Pila fin, Pila aux)
         {
             int m = 0;
-            if (n % 2 != 0)
+            int totalMovimientos = (int)Math.Pow(2, n) - 1;
+
+            mostrar(ini, aux, fin);
+
+            while (m < totalMovimientos)
             {
-                while (fin.Size != n)
+                if (n % 2 != 0)
                 {
                     mover_disco(ini, fin);
                     m++;
                     mostrar(ini, aux, fin);
 
-                    if (fin.Size == n) break;
+                    if (m == totalMovimientos) break;
 
                     mover_disco(ini, aux);
                     m++;
                     mostrar(ini, aux, fin);
 
-                    if (fin.Size == n) break;
+                    if (m == totalMovimientos) break;
 
                     mover_disco(aux, fin);
                     m++;
                     mostrar(ini, aux, fin);
                 }
-            }
-            else
-            {
-                while (fin.Size != n)
+                else
                 {
                     mover_disco(ini, aux);
                     m++;
                     mostrar(ini, aux, fin);
 
-                    if (fin.Size == n) break;
+                    if (m == totalMovimientos) break;
 
                     mover_disco(ini, fin);
                     m++;
                     mostrar(ini, aux, fin);
 
-                    if (fin.Size == n) break;
+                    if (m == totalMovimientos) break;
 
                     mover_disco(aux, fin);
                     m++;
