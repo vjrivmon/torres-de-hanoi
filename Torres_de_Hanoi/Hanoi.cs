@@ -20,11 +20,12 @@ namespace Torres_de_Hanoi
             }
         }
 
-        public void mostrar(Pila a, Pila b, Pila c)
+        public void mostrar(Pila a, Pila b, Pila c, int m)
         {
-            Console.WriteLine("Pila A: " + a);
-            Console.WriteLine("Pila B: " + b);
-            Console.WriteLine("Pila C: " + c);
+            Console.WriteLine($"Situación tras el movimiento {m}");
+            Console.WriteLine("Torre INI: " + a);
+            Console.WriteLine("Torre AUX: " + b);
+            Console.WriteLine("Torre FIN: " + c);
         }
 
         public int iterativo(int n, Pila ini, Pila fin, Pila aux)
@@ -32,7 +33,7 @@ namespace Torres_de_Hanoi
             int m = 0;
             int totalMovimientos = (int)Math.Pow(2, n) - 1;
 
-            mostrar(ini, aux, fin);
+            mostrar(ini, aux, fin, m);
 
             while (m < totalMovimientos)
             {
@@ -40,37 +41,37 @@ namespace Torres_de_Hanoi
                 {
                     mover_disco(ini, fin);
                     m++;
-                    mostrar(ini, aux, fin);
+                    mostrar(ini, aux, fin, m);
 
                     if (m == totalMovimientos) break;
 
                     mover_disco(ini, aux);
                     m++;
-                    mostrar(ini, aux, fin);
+                    mostrar(ini, aux, fin, m);
 
                     if (m == totalMovimientos) break;
 
                     mover_disco(aux, fin);
                     m++;
-                    mostrar(ini, aux, fin);
+                    mostrar(ini, aux, fin, m);
                 }
                 else
                 {
                     mover_disco(ini, aux);
                     m++;
-                    mostrar(ini, aux, fin);
+                    mostrar(ini, aux, fin, m);
 
                     if (m == totalMovimientos) break;
 
                     mover_disco(ini, fin);
                     m++;
-                    mostrar(ini, aux, fin);
+                    mostrar(ini, aux, fin, m);
 
                     if (m == totalMovimientos) break;
 
                     mover_disco(aux, fin);
                     m++;
-                    mostrar(ini, aux, fin);
+                    mostrar(ini, aux, fin, m);
                 }
             }
             return m;
@@ -82,12 +83,12 @@ namespace Torres_de_Hanoi
             if (n == 1)
             {
                 mover_disco(ini, fin);
-                mostrar(ini, aux, fin);
+                mostrar(ini, aux, fin, m);
                 return 1;
             }
             m += recursivo(n - 1, ini, aux, fin);
             mover_disco(ini, fin);
-            mostrar(ini, aux, fin);
+            mostrar(ini, aux, fin, m);
             m += 1;
             m += recursivo(n - 1, aux, fin, ini);
             return m;
