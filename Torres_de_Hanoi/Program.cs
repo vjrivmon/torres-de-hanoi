@@ -28,17 +28,15 @@ namespace Torres_de_Hanoi
 
             Hanoi h = new Hanoi();
 
-            if (metodo.ToUpper() == "I")
+            if (metodo.ToUpper() == "I" || metodo.ToLower() == "i")
             {
                 int movimientos = h.iterativo(n, ini, fin, aux);
                 Console.WriteLine($"Se han realizado {movimientos} movimientos para resolver las Torres de Hanoi con {n} discos usando el método iterativo.");
             }
-            else if (metodo.ToUpper() == "R")
+            else if (metodo.ToUpper() == "R" || metodo.ToLower() == "r")
             {
-                // Aquí deberías llamar a tu método recursivo, que aún no está implementado.
-                // Por ejemplo:
-                // int movimientos = h.recursivo(n, ini, fin, aux);
-                // Console.WriteLine($"Se han realizado {movimientos} movimientos para resolver las Torres de Hanoi con {n} discos usando el método recursivo.");
+                int movimientos = h.recursivo(n, ini, fin, aux);
+                Console.WriteLine($"Se han realizado {movimientos} movimientos para resolver las Torres de Hanoi con {n} discos usando el método recursivo.");
             }
             else
             {
@@ -49,6 +47,7 @@ namespace Torres_de_Hanoi
             Console.WriteLine($"Torre INI: {ini}");
             Console.WriteLine($"Torre AUX: {aux}");
             Console.WriteLine($"Torre FIN: {fin}");
+            Console.WriteLine(" ");
 
             Console.ReadKey(); // Espera a que el usuario presione una tecla antes de cerrar la consola.
         }
